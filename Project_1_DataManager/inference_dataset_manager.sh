@@ -10,7 +10,7 @@ set -e
 
 # 默认参数
 # EXTS="yuv,jpg,mp4,txt"
-EXTS="bmp"
+EXT_ARR=(bmp txt)
 SRC="SRC_DIR"
 DST="DST_DIR"
 
@@ -19,10 +19,10 @@ DST="DST_DIR"
 [ -z "$DST" ] && echo "❌ 请指定 --dst 目标目录"
 [ ! -d "$SRC" ] && echo "❌ 源目录不存在: $SRC" && exit 1
 
+rm -rf "$DST"
 mkdir -p "$DST"
 
 # 构建 find 的扩展名过滤条件（用 -o 连接）
-IFS=',' read -ra EXT_ARR <<< "$EXTS"
 FIND_COND=()
 for ext in "${EXT_ARR[@]}"; do
   FIND_COND+=(-o -name "*.${ext}")
