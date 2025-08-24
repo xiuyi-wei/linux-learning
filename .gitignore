@@ -1,0 +1,48 @@
+# ============================
+# 常用 Linux 学习仓库忽略配置
+# ============================
+
+# 忽略私有脚本（避免误传）
+deploy_git_script.sh
+*_private.sh
+
+# 如果你想排除所有本地的临时 Bash 脚本
+# *.sh
+# ↑ 如果需要同步部分脚本，就不要用这一条
+
+# 编辑器/系统自动生成的文件
+*.swp
+*.swo
+*.tmp
+*.bak
+*~
+.vscode/
+.idea/
+
+# PDF/文档缓存
+*.pdf
+*.docx
+*.pptx
+
+# Python 虚拟环境/缓存（如果后续加了 Python 脚本）
+__pycache__/
+*.pyc
+venv/
+.env
+
+# 编译文件（如果你用 C/C++）
+*.o
+*.out
+*.a
+*.so
+build/
+dist/
+
+# 压缩包
+*.zip
+*.tar.gz
+*.tgz
+
+# OS系统文件
+.DS_Store
+Thumbs.db
